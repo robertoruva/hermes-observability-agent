@@ -1,0 +1,25 @@
+services:
+  hermes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    ports:
+      - "${HERMES_PORT:-8790}:8790"
+    environment:
+      HERMES_ENV: demo
+      HERMES_GRAFANA_SOURCE: ${HERMES_GRAFANA_SOURCE:-fake_grafana}
+      HERMES_APPLICATION_API_BASE_URL: ${HERMES_APPLICATION_API_BASE_URL:-}
+      HERMES_APPLICATION_API_TIMEOUT_SECONDS: ${HERMES_APPLICATION_API_TIMEOUT_SECONDS:-2.0}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8790/health', timeout=2).read()",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-17",
+  "mode": "deterministic-local-refresh",
+  "llm_used": false,
+  "included": [
+    "knowledge/36-public-release-checklist.md",
+    "knowledge/37-llm-private-layer-decision.md"
+  ]
+}

@@ -1,0 +1,9 @@
+services:
+  hermes-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    environment:
+      HERMES_ENV: test
+      HERMES_GRAFANA_SOURCE: fake_grafana
