@@ -77,6 +77,22 @@
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
         "source_file": "knowledge/36-public-release-checklist.md"
+      },
+      {
+        "id": "first_manual_demo_story",
+        "label": "First Manual Demo Story",
+        "nodes": [
+          "first_manual_demo",
+          "first_plan_proposal_demo",
+          "operations_explain",
+          "maintenance_plan_generate",
+          "actions_propose",
+          "wait_for_approval"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "knowledge/39-first-plan-and-proposal-demo.md"
       }
     ]
   },
@@ -769,6 +785,32 @@
       "contributor": null,
       "community": 7,
       "norm_label": "release gate"
+    },
+    {
+      "id": "first_manual_demo",
+      "label": "First Manual Demo",
+      "file_type": "document",
+      "source_file": "knowledge/38-first-manual-demo.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "first manual demo"
+    },
+    {
+      "id": "first_plan_proposal_demo",
+      "label": "First Plan And Proposal Demo",
+      "file_type": "document",
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "first plan and proposal demo"
     }
   ],
   "links": [
@@ -1619,6 +1661,86 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "knowledge/37-llm-private-layer-decision.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "how_to_demo_hermes",
+      "target": "first_manual_demo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/38-first-manual-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_manual_demo",
+      "target": "operations_explain",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/38-first-manual-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_manual_demo",
+      "target": "endpoint_demo_flow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/38-first-manual-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_manual_demo",
+      "target": "first_plan_proposal_demo",
+      "relation": "precedes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_plan_proposal_demo",
+      "target": "maintenance_plan_generate",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_plan_proposal_demo",
+      "target": "actions_propose",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_plan_proposal_demo",
+      "target": "endpoint_demo_flow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "first_plan_proposal_demo",
+      "target": "wait_for_approval",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "knowledge/39-first-plan-and-proposal-demo.md",
       "source_location": null,
       "weight": 1.0
     }

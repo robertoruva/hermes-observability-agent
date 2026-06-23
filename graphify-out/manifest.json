@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-06-17",
+  "generated_at": "2026-06-23T00:00:00Z",
   "mode": "deterministic-local-refresh",
   "llm_used": false,
   "included": [
     "knowledge/36-public-release-checklist.md",
     "knowledge/37-llm-private-layer-decision.md"
-  ]
+  ],
+  "notes": "Deterministic refresh including first manual demo guides 38 and 39."
 }

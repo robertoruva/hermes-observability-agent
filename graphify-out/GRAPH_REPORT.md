@@ -1,12 +1,13 @@
-# Graph Report - .  (2026-06-17)
+# Graph Report - .  (2026-06-23)
 
 ## Corpus Check
 - Deterministic local refresh generated from README, knowledge notes, and implementation surface.
 - No LLM API key was used, so this graph favors explicit project structure over deep semantic inference.
+- Updated to include the first manual demo guides: `knowledge/38-first-manual-demo.md` and `knowledge/39-first-plan-and-proposal-demo.md`.
 
 ## Summary
-- 53 nodes · 85 edges · 8 communities
-- Extraction: 85 EXTRACTED · 0 INFERRED · 0 AMBIGUOUS
+- 55 nodes · 93 edges · 8 communities
+- Extraction: 93 EXTRACTED · 0 INFERRED · 0 AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -14,29 +15,30 @@
 - [[_COMMUNITY_Hexagonal_Architecture|Hexagonal Architecture]] (6 nodes)
 - [[_COMMUNITY_Capability_Pipeline|Capability Pipeline]] (8 nodes)
 - [[_COMMUNITY_Docker_Runtime|Docker Runtime]] (6 nodes)
-- [[_COMMUNITY_Public_Demo_Hardening|Public Demo Hardening]] (6 nodes)
+- [[_COMMUNITY_Public_Demo_Hardening|Public Demo Hardening]] (8 nodes)
 - [[_COMMUNITY_Implementation_Surface|Implementation Surface]] (10 nodes)
 - [[_COMMUNITY_Knowledge_Guides|Knowledge Guides]] (5 nodes)
 - [[_COMMUNITY_Release_Readiness|Release Readiness]] (5 nodes)
 
 ## God Nodes (most connected - your core abstractions)
-1. `actions.propose` - 10 edges
+1. `actions.propose` - 11 edges
 2. `Hermes Observability Agent` - 8 edges
 3. `Public Demo Hardening` - 8 edges
-4. `metrics.read` - 7 edges
-5. `operations.explain` - 7 edges
+4. `operations.explain` - 8 edges
+5. `Endpoint Demo Flow` - 8 edges
 6. `FastAPI App` - 7 edges
-7. `Public Release Checklist` - 7 edges
-8. `LLM Private Layer Decision` - 7 edges
-9. `Hexagonal Architecture` - 6 edges
-10. `Ports` - 6 edges
+7. `metrics.read` - 7 edges
+8. `maintenance.plan.generate` - 7 edges
+9. `Public Release Checklist` - 7 edges
+10. `LLM Private Layer Decision` - 7 edges
 
 ## Key Updated Connections
-- `Public Release Checklist` --> `Release Gate`
-- `LLM Private Layer Decision` --> `Deterministic Public Behavior`
-- `LLM Private Layer Decision` --> `Private Optional LLM`
-- `Public Release Checklist` --> `No Execution Boundary`
-- `Private Optional LLM` --> `Application API Boundary`
+- `First Manual Demo` --> `operations.explain`
+- `First Manual Demo` --> `Endpoint Demo Flow`
+- `First Manual Demo` --> `First Plan And Proposal Demo`
+- `First Plan And Proposal Demo` --> `maintenance.plan.generate`
+- `First Plan And Proposal Demo` --> `actions.propose`
+- `First Plan And Proposal Demo` --> `Wait For Approval`
 
 ## Hyperedges (group relationships)
 - **Capability Pipeline** — grafana.read, metrics.read, operations.explain, maintenance.plan.generate, actions.propose, Wait For Approval [EXTRACTED 1.00]
@@ -44,6 +46,7 @@
 - **Public Safety Model** — Public Repository, Private Configuration, Synthetic Demo Data, Least Privilege, No Execution Boundary [EXTRACTED 1.00]
 - **Demo Story** — How To Demo Hermes, Endpoint Demo Flow, actions.propose, No Execution Boundary [EXTRACTED 1.00]
 - **Release Readiness Model** — Public Release Checklist, LLM Private Layer Decision, Deterministic Public Behavior, Private Optional LLM, Release Gate [EXTRACTED 1.00]
+- **First Manual Demo Story** — First Manual Demo, First Plan And Proposal Demo, operations.explain, maintenance.plan.generate, actions.propose, Wait For Approval [EXTRACTED 1.00]
 
 ## Communities (8 total)
 
@@ -60,7 +63,7 @@ Nodes (8): grafana.read, metrics.read, operations.explain, maintenance.plan.gene
 Nodes (6): Docker First Workflow, Dockerfile, Demo Compose File, Test Compose File, Container Runtime Guard, Docker Tests
 
 ### Community 4 - "Public Demo Hardening"
-Nodes (6): Hermes Observability Agent, Public Demo Hardening, How To Demo Hermes, Endpoint Demo Flow, Public Checklist, Knowledge Graph Refresh
+Nodes (8): Hermes Observability Agent, Public Demo Hardening, How To Demo Hermes, Endpoint Demo Flow, Public Checklist, Knowledge Graph Refresh, First Manual Demo, First Plan And Proposal Demo
 
 ### Community 5 - "Implementation Surface"
 Nodes (10): GrafanaReader Port, MetricsReader Port, OperationsExplainer Port, MaintenancePlanner Port, ActionProposer Port, FakeMetricsReader, RuleBasedOperationsExplainer, RuleBasedMaintenancePlanner, RuleBasedActionProposer, FastAPI App
@@ -73,7 +76,7 @@ Nodes (5): Public Release Checklist, LLM Private Layer Decision, Deterministic P
 
 ## Suggested Questions
 
-- Why does Hermes keep deterministic public behavior separate from private optional LLM behavior?
-- What must be true before publishing Hermes publicly?
-- How does the release checklist enforce the no-execution boundary?
-- Which private capabilities could use an LLM without making it the security boundary?
+- How does the first manual demo prove the explain -> plan -> propose flow?
+- Why does Hermes keep action proposals separate from execution?
+- Which endpoints should a new user run first in the public demo?
+- How does the manual demo support the public-to-private transition?
