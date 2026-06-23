@@ -108,6 +108,35 @@ docker compose -f docker-compose.demo.yml down
 
 Hermes is Docker-first by design. The HTTP application refuses to start unless it is running inside the Hermes Docker runtime.
 
+## Troubleshooting
+
+If Docker starts but this URL does not open:
+
+```text
+http://localhost:8790/docs
+```
+
+check the container first:
+
+```bash
+docker compose -f docker-compose.demo.yml ps
+```
+
+The Hermes service should appear as `healthy` and expose:
+
+```text
+0.0.0.0:8790->8790/tcp
+```
+
+If the container is healthy but the browser still cannot reach `/docs`, check:
+
+- Docker Desktop is fully running
+- no other service is using port `8790`
+- Docker can expose ports to the host
+- the demo was started from the repository root
+
+This usually means the local Docker host networking needs attention, not that Hermes failed to start.
+
 ## Implemented Capabilities
 
 Hermes currently implements this capability path:
